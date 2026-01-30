@@ -1,0 +1,35 @@
+🔍 Checking if server is running...
+✅ Server is running!
+
+======================================================================
+🧪 COMPREHENSIVE RAG CHATBOT TEST SUITE
+======================================================================
+
+======================================================================
+🏥 Testing Health Endpoint
+======================================================================
+Status Code: 200
+Response Time: 5.78 ms
+Response: {
+  "status": "healthy",
+  "service": "RAG Chatbot",
+  "workflow_initialized": true
+}
+✅ Health check passed
+
+======================================================================
+💰 Testing Product Price Queries
+======================================================================
+❌ Error: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=30)
+
+📝 Query: What is the price of SmartWatch Pro X?
+Traceback (most recent call last):
+  File "/home/labuser/RAG_assessment/test_comprehensive.py", line 556, in <module>
+    main()
+  File "/home/labuser/RAG_assessment/test_comprehensive.py", line 552, in main
+    tester.run_all_tests()
+  File "/home/labuser/RAG_assessment/test_comprehensive.py", line 311, in run_all_tests
+    self.print_test_result(result)
+  File "/home/labuser/RAG_assessment/test_comprehensive.py", line 242, in print_test_result
+    print(f"⏱️  Response Time: {result['response_time_ms']} ms", end="")
+KeyError: 'response_time_ms'

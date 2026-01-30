@@ -1,0 +1,36 @@
+/home/labuser/RAG_assessment/.venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+INFO:     Started server process [34384]
+INFO:     Waiting for application startup.
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+============================================================
+🚀 Starting RAG Chatbot Service
+============================================================
+
+📄 Step 1: Loading documents...
+✅ Loaded and split document into 4 chunks
+
+🗄️  Step 2: Setting up vector store...
+📂 Found existing vector store, loading...
+📂 Loading existing vector store...
+✅ Vector store loaded successfully
+
+🔗 Step 3: Building RAG chain...
+✅ RAG chain initialized
+
+🕸️  Step 4: Building LangGraph workflow...
+✅ LangGraph workflow compiled successfully
+
+============================================================
+✅ RAG Chatbot Service is ready!
+============================================================
+📍 API docs available at: http://localhost:8000/docs
+📍 Health check: http://localhost:8000/health
+📍 Chat endpoint: POST http://localhost:8000/chat
+============================================================
+
+INFO:     127.0.0.1:47826 - "GET /health HTTP/1.1" 200 OK

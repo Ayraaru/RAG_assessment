@@ -1,0 +1,19 @@
+nohup: ignoring input
+/home/labuser/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/labuser/RAG_assessment/src/main.py", line 14, in <module>
+    from src.langgraph_workflow import RAGWorkflow
+  File "/home/labuser/RAG_assessment/src/langgraph_workflow.py", line 7, in <module>
+    from langgraph.graph import StateGraph, END
+  File "/home/labuser/.local/lib/python3.10/site-packages/langgraph/graph/__init__.py", line 1, in <module>
+    from langgraph.graph.graph import END, Graph
+  File "/home/labuser/.local/lib/python3.10/site-packages/langgraph/graph/graph.py", line 12, in <module>
+    from langgraph.checkpoint import BaseCheckpointSaver
+  File "/home/labuser/.local/lib/python3.10/site-packages/langgraph/checkpoint/__init__.py", line 1, in <module>
+    from langgraph.checkpoint.base import BaseCheckpointSaver, Checkpoint, CheckpointAt
+ImportError: cannot import name 'CheckpointAt' from 'langgraph.checkpoint.base' (/home/labuser/.local/lib/python3.10/site-packages/langgraph/checkpoint/base/__init__.py)
