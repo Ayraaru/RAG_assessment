@@ -33,9 +33,7 @@ class RAGWorkflow:
         self.classifier_llm = ChatGoogleGenerativeAI(
             model=settings.model_name,
             google_api_key=settings.google_api_key,
-            temperature=0.1,  # Very low temperature for faster, more consistent classification
-            convert_system_message_to_human=True,
-            max_output_tokens=10  # Limit output to just the category name
+            temperature=0.1  # Very low temperature for faster, more consistent classification
         )
         
         # Build the workflow graph

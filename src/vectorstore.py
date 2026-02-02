@@ -87,8 +87,7 @@ class VectorStore:
         self.retriever = self.vectorstore.as_retriever(
             search_type="similarity",
             search_kwargs={
-                "k": k,
-                "fetch_k": k * 2  # Fetch more initially for better diversity
+                "k": k
             }
         )
         

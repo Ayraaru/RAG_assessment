@@ -28,9 +28,7 @@ class RAGChain:
         self.llm = ChatGoogleGenerativeAI(
             model=settings.model_name,
             google_api_key=settings.google_api_key,
-            temperature=settings.temperature,
-            convert_system_message_to_human=True,
-            max_output_tokens=150  # Limit output for faster responses
+            temperature=settings.temperature
         )
         
         # Define RAG prompt template

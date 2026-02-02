@@ -7,6 +7,8 @@ from pathlib import Path
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from src.config import settings
 from src.document_loader import DocumentLoader
 from src.vectorstore import VectorStore
@@ -99,13 +101,22 @@ app.add_middleware(
 )
 
 
+# Mount static files
+static_dir = Path(__file__).parent.parent / "static"
+if static_dir.exists():
+    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
+
+
 # Include routers
 app.include_router(routes.router, tags=["Chat"])
 
 
 @app.get("/")
 async def root():
-    """Root endpoint"""
+    """Root endpoint - serve frontend"""
+    static_index = Path(__file__).parent.parent / "static" / "index.html"
+    if static_index.exists():
+        return FileResponse(static_index)
     return {
         "message": "Welcome to RAG Chatbot API",
         "docs": "/docs",
